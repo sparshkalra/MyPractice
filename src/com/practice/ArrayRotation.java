@@ -11,9 +11,13 @@ public class ArrayRotation {
 		
 	//	rotateLeft(ele);
 		
-		System.out.println(Arrays.toString(ele));
-		System.out.println("------------------------------");
+		//System.out.println(Arrays.toString(ele));
+		//System.out.println("------------------------------");
 		//rotateRight(ele);
+		
+		int[] nums = {3,0,1};
+		
+		System.out.println(missingNumber(nums));
 	}
 	//1,2,3,4,5,6  --- 6,1,2,3,4,5
 	public static void rotateLeft(int[] arr)
@@ -77,6 +81,34 @@ public class ArrayRotation {
 		System.out.println(Arrays.toString(arr));
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+    public static int missingNumber(int[] nums) 
+    {
+        int[] nums1 = new int[nums.length+1];
+        
+        Arrays.fill(nums1,0);
+        for(int i:nums)
+        {
+            nums1[i] = -1;
+        }
+        
+        for(int i=0;i<nums1.length;i++)
+        {
+            if(nums[i] == 0)
+            {
+                return i+1;
+            }
+        }
+        return 0;
+            
+    }
 	
 	
 }

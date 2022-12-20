@@ -23,16 +23,26 @@ public class JobSequencingProblem {
  * 7 43 108 8 96 167 9 73 251 10 96 170 11 14 156 12 78 184 13 61 370 14 77 424 15 68 397 16 40 375 17 36 218		
  */
 		
-		Job job1 = new Job(1, 56, 288);Job job2 = new Job(2, 27, 435);Job job3 = new Job(3, 67, 401);
-		Job job4 = new Job(4, 64, 368);Job job5 = new Job(5,94,248);Job job6 = new Job(6, 54,361);
-		Job job7 = new Job(7, 43, 108);Job job8 = new Job(8, 96, 167);Job job9 = new Job(9 ,73 ,251);
-		Job job10 = new Job(10, 96, 170);Job job11 = new Job(11, 14, 156);Job job12 = new Job(12, 78, 184);
-		Job job13 = new Job(13, 61, 370);Job job14 = new Job(14, 77, 424);Job job15 = new Job(15, 68, 397);
-		Job job16 = new Job(16, 40, 375);Job job17 = new Job(17,36,218);
+/*
+ * Job job1 = new Job(1, 56, 288);Job job2 = new Job(2, 27, 435);Job job3 = new
+ * Job(3, 67, 401); Job job4 = new Job(4, 64, 368);Job job5 = new
+ * Job(5,94,248);Job job6 = new Job(6, 54,361); Job job7 = new Job(7, 43,
+ * 108);Job job8 = new Job(8, 96, 167);Job job9 = new Job(9 ,73 ,251); Job job10
+ * = new Job(10, 96, 170);Job job11 = new Job(11, 14, 156);Job job12 = new
+ * Job(12, 78, 184); Job job13 = new Job(13, 61, 370);Job job14 = new Job(14,
+ * 77, 424);Job job15 = new Job(15, 68, 397); Job job16 = new Job(16, 40,
+ * 375);Job job17 = new Job(17,36,218);
+ * 
+ * Job[] arr = {job1, job2,job3,job4,job5,job6,job7,
+ * job8,job9,job10,job11,job12,job13, job14,job15,job16,job17};
+ */
+		Job jo1 = new Job(1, 4, 20); 
+		Job jo2 = new Job(2, 1, 10);
+		Job jo3 = new Job(3, 1, 40);
+		Job jo4 = new Job(4, 1, 30);
 		
-		 Job[] arr = {job1, job2,job3,job4,job5,job6,job7, job8,job9,job10,job11,job12,job13, job14,job15,job16,job17};
-		 
-		 System.out.println(Arrays.toString(new JobSequencingProblem().jobScheduling(arr, 5)));
+		Job[] arr1 = {jo1, jo2,jo3,jo4};
+		 System.out.println(Arrays.toString(new JobSequencingProblem().jobScheduling(arr1, 4)));
 		
 	}
 	int[] jobScheduling(Job arr[], int n)

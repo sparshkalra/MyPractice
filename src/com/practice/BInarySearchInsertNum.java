@@ -8,7 +8,9 @@ public class BInarySearchInsertNum {
 		int[] nums = {1,3,7,11,17,24,35};
 		System.out.println(searchInsert(nums,18));
 		System.out.println(searchInsert(nums,38));
-	}
+		
+	}	
+	
 	
 	public static int searchInsert(int[] nums, int target) 
     {

@@ -3,7 +3,8 @@ package com.java.concepts;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cloning implements Cloneable {
+public class Cloning implements Cloneable 
+{
 	
 	int var;
 	CloneData data;
@@ -73,18 +74,24 @@ public class Cloning implements Cloneable {
 		this.abc = abc;
 		this.data = data;
 	}
-	
-@Override
-public Cloning clone() throws CloneNotSupportedException
-{
-	Cloning obj = (Cloning) super.clone();
-	
-	obj.setData(new CloneData(0));
-	
-	return obj;
-		
-}
 
+	@Override
+	public String toString() {
+		return "Cloning [var=" + var + ", data=" + data + ", abc=" + abc + "]";
+	}
+	
+	
+	
+	/*
+	 * @Override public Cloning clone() throws CloneNotSupportedException { Cloning
+	 * obj = (Cloning) super.clone();
+	 * 
+	 * obj.setData(new CloneData(0));
+	 * 
+	 * return obj;
+	 * 
+	 * }
+	 */
 }
 
 class CloneData
@@ -103,4 +110,10 @@ class CloneData
 	{
 		this.data1 = data1;
 	}
+
+	@Override
+	public String toString() {
+		return "CloneData [data1=" + data1 + "]";
+	}
+	
 }

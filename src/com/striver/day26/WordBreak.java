@@ -18,25 +18,29 @@ public class WordBreak {
 
 	public static int wordBreak(String A, List<String> bList )
     {
-		boolean flag = true;
-		while(flag)
-		{
-			if(A.equals(""))
-			{
-				return 1;
-			}
-			flag = false;
-			
-			for(String temp:bList)
-			{
-				if(A.startsWith(temp))
-				{
-					flag = true;
-					A = A.substring(temp.length());
-				}
-			}
-		}
-		return 0;
-		
+		int n = A.length();
+        boolean[] dp = new boolean[n+1];
+        dp[0] = true;
+        
+        for(int i=0; i<=n; i++) 
+        {
+            for(int j=0; j<i; j++) 
+            {
+                String word = A.substring(j, i);
+                 if(dp[j] && bList.contains(word))
+                 {
+                    dp[i] = true;
+                    break;
+                 }
+            }
+        }
+        
+        if(dp[n])
+        {
+            return 1;
+        }
+        return 0;
+    
+
     }
 }

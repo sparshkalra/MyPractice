@@ -6,8 +6,10 @@ public class MinimumSubArrayLength
 	{
 		int target = 7;
 		int []nums = {1,8,9,2,3,2};
+		int[] nums1 = {2,3,1,2,4,3};
+		//System.out.println(minSubArrayLenExact(target,nums));
 		
-		System.out.println(minSubArrayLenExact(target,nums));
+		System.out.println(minSubArrayLen(7, nums1));
 	}
 	public static int minSubArrayLen(int target, int[] nums) 
 	{

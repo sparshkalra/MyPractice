@@ -8,6 +8,11 @@ public class NoOfWaystoPay {
 		int n =9;
 		
 		//System.out.println(calculateWays(arr,n));
+		String s = "|**|*|*";
+		
+		System.out.println(s.substring(0,5));
+		System.out.println(s.substring(0,6));
+		
 		
 		System.out.println(minCostClimbingStairsWithThreeSteps(4));
 

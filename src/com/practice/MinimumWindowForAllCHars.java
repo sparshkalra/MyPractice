@@ -25,7 +25,8 @@ public class MinimumWindowForAllCHars
 		int start = 0; // starting index of ans
 		int count = 0;
 		// creating map
-		for (int i = 0; i < t.length; i++) {
+		for (int i = 0; i < t.length; i++) 
+		{
 			if (m[t[i]] == 0)
 				count++;
 			m[t[i]]++;

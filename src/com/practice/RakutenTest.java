@@ -39,5 +39,61 @@ public class RakutenTest {
 		}
 		return sb.toString();
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public String countAndSay2(int n)
+	{
+		if (n==1)
+		{
+			return "1";
+		}
+		
+		String prev = countAndSay2(n-1);
+		
+		char[]prevArr = prev.toCharArray();
+		
+		StringBuilder sb = new StringBuilder();
+		
+		int start = 0;
+		int end = 0;
+		while(end < prevArr.length)
+		{
+			int count = 0;
+			while(end< prevArr.length-1 && prevArr[start] == prevArr[end])
+			{
+				start ++;
+				count ++;
+			}
+			sb.append(count);
+			sb.append(prevArr[start]);
+			start = end;
+		}
+	}
+	
+	
+	
+	
 
 }

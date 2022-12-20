@@ -13,10 +13,12 @@ public class MajorityElement2
 		int[] nums1 = {1};
 		int[] nums2 = {1,2};
 		int[] nums3 = {3,2,3,2};
-		System.out.println(majorityElement(nums));
-		System.out.println(majorityElement(nums1));
-		System.out.println(majorityElement(nums2));
-		System.out.println(majorityElement(nums3));
+		/*
+		 * System.out.println(majorityElement(nums));
+		 * System.out.println(majorityElement(nums1));
+		 * System.out.println(majorityElement(nums2));
+		 */
+		System.out.println(majorityElementOptimized(nums3));
 
 	}
 	 public static List<Integer> majorityElement(int[] nums) 
@@ -41,7 +43,7 @@ public class MajorityElement2
 	        return op;
 	    }
 	 
-	 public List majorityElementOptimized(int[] nums) {
+	 public static List majorityElementOptimized(int[] nums) {
 		 int candidate1=0,candidate2=0,count1=0,count2=0;
 		 int n=nums.length;
 		 for(int i=0;i<nums.length;i++){

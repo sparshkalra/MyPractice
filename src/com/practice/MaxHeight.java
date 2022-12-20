@@ -5,9 +5,12 @@ public class MaxHeight {
 	public static void main(String[] args)
 	{
 		int[]height = {1,1};
-		System.out.println(maxArea(height));
+		int[]height1 = {1,8,6,2,5,4,8,3,7};
+		System.out.println(maxArea(height1));
 	}
 	
+	
+	//https://leetcode.com/problems/container-with-most-water/
 	
 	public static int maxAreaDP(int[]arr)
 	{

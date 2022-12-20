@@ -13,31 +13,21 @@ public class CoinChange {
 	}
     public static int coinChange(int[] coins, int amount) 
     {
-        Arrays.sort(coins);
-        int op =0;
-        boolean flag = true;
-        while(flag)
-        {
-            flag = false;
-            for(int i = coins.length-1;i>=0;i--)
+    	int[] dp = new int[amount + 1];
+        for (int i=1; i < dp.length; i++) {
+          dp[i] = dp.length;
+          for (int j=0; j < coins.length; j++) {
+            if (i >= coins[j])
             {
-                int value = coins[i];
-            
-                if(amount <value)
-                {
-                    continue;
-                }
-                int div = amount/value;
-                flag = true;
-                amount = amount - div*value;
-                op = op+div;
-            }   
+            	dp[i] = Math.min(dp[i], dp[i-coins[j]] + 1);
+            }
+            	
+          }
         }
-        
-        if(amount !=0)
+        if(dp[amount] == dp.length)
         {
-            return -1;
+        	return -1;
         }
-        return op;
+        return dp[amount];
     }
 }

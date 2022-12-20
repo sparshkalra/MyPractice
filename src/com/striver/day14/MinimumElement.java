@@ -2,7 +2,8 @@ package com.striver.day14;
 
 import java.util.Stack;
 
-public class MinimumElement {
+public class MinimumElement 
+{
 
 	Stack<Integer> stack;
     int min = Integer.MAX_VALUE;
@@ -36,6 +37,5 @@ public class MinimumElement {
         return min;    
     }
 
-	}
 
 }

@@ -1,11 +1,13 @@
 package com.striver.day1;
 
+import java.util.Arrays;
+
 public class NextPermutation {
 
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
-		int[] nums = {1,3,2};
+		int[] nums = {1,2,3,7};
 		new NextPermutation().nextPermutation(nums);
 	}
 
@@ -14,16 +16,16 @@ public class NextPermutation {
 	 * 1st step Then reverse the array from 1st number to end
 	 */
 	public void nextPermutation(int[] nums) 
-	{
-		 if(nums ==null || nums.length <= 1)
-	     {
-	          return;
-	     }
+    {    		
+        if(nums ==null || nums.length <= 1)
+        {
+            return;
+        }
 		int ind = 0, n = nums.length;
 		boolean flag=false;
 		
 		//Find 1st number smaller than next starting from back
-		for(int i=0;i<nums.length-1;i++)
+		for(int i=n-2;i>=0;i--)
 		{
 			if(nums[i] < nums[i+1])
 			{
@@ -36,7 +38,6 @@ public class NextPermutation {
 		// If number is increasing order only, then return smallest.
 		if (flag == false) {
 			reverse(nums, ind, n - 1);
-			System.out.print(nums);
 			return;
 		}
 
@@ -53,9 +54,8 @@ public class NextPermutation {
 		}
 
 		reverse(nums, ind + 1, n - 1);
-
-		System.out.print(nums);
-
+		
+		System.out.println(Arrays.toString(nums));
 	}
 
 	public void reverse(int a[], int l, int h) {

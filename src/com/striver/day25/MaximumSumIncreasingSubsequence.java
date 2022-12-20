@@ -53,7 +53,6 @@ public class MaximumSumIncreasingSubsequence {
         {
             op.addAll(temp);
         }
-        Collections.sort(op);
         
         return op;
             

@@ -13,9 +13,9 @@ public class DiameterOfBinaryTree {
 		root.left = two;
 		root.right = three;
 		root.left.left = four;
-		root.left.right = five;
+		root.left.left.left = five;
 		
-		new DiameterOfBinaryTree().diameterOfBinaryTree(root);
+		System.out.println(new DiameterOfBinaryTree().diameterOfBinaryTree(root));
 		
 	}
 	int diameter = 0;

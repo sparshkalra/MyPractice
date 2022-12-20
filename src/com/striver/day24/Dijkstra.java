@@ -7,7 +7,7 @@ import java.io.*;
 
 public class Dijkstra 
 {
-	static final int V = 4;
+	static final int V = 9;
 	public static void main(String[] args)
 	{
 		int graph[][] = new int[][] { { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
@@ -26,7 +26,9 @@ public class Dijkstra
 										{ 1, 3, 0, 0,}};
 																	
 		Dijkstra t = new Dijkstra();
-		t.dijkstra(graph1, 0);
+		t.dijkstra(graph, 0);
+		
+
 	}
 	
 	void dijkstra(int graph[][], int src)
@@ -54,7 +56,7 @@ public class Dijkstra
 			// iteration.
 			int u = minDistance(dist, sptSet);
 			
-			 System.out.println("U value coming"+ u);
+			 System.out.println("U value coming:"+ u);
 
 			// Mark the picked vertex as processed
 			sptSet[u] = true;
@@ -68,7 +70,12 @@ public class Dijkstra
 				// v through u is smaller than current value of dist[v]
 				if (!sptSet[v] && graph[u][v] != 0 && 
 				dist[u] != Integer.MAX_VALUE && dist[u] + graph[u][v] < dist[v])
+				{
+					 System.out.println("U and v value coming:"+ u +"& "+ v);
+
 					dist[v] = dist[u] + graph[u][v];
+
+				}
 		}
 		printSolution(dist);
 	}

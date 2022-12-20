@@ -52,7 +52,6 @@ public class TopKFrequent {
 	{
 		Map<Integer,Integer>hm1 = new LinkedHashMap<Integer,Integer>();
 		List<Map.Entry<Integer,Integer>> list1 = new ArrayList<Map.Entry<Integer,Integer>>          (hm.entrySet());
-		list1.in
 		Collections.sort(list1, new Comparator<Map.Entry<Integer,Integer>>() {
 
 			@Override

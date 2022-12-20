@@ -22,9 +22,9 @@ public class LeftViewOfBinaryTree {
 		root.right.left = four;
 		root.right.right = five;
 		
-		//System.out.println(leftView(root));
+		System.out.println(leftView(root));
 		
-		printLeftView(root);
+		//printLeftView(root);
 	}
 
 	static ArrayList<Integer> leftView(Node root)

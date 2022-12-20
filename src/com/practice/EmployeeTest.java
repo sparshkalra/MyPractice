@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 public class EmployeeTest {
@@ -99,7 +102,8 @@ public class EmployeeTest {
 			
 		
 			
-			
+
+
 		});
 		
 		Employee maxSalaryEmployee =employeeListDept.get(0);
@@ -110,7 +114,74 @@ public class EmployeeTest {
 				return employeeListDept.get(i);
 			}
 		}
+
+		employeeList.stream().forEach(x ->
+		{
+			if(x.getId() == 3)
+			{
+				throw new Exception();
+			}
 		
+	});
 		return null;
 	}
+	
+	public List<String> topKFrequent(String[] words, int k) 
+    {
+        Map<String, Integer> hm = new LinkedHashMap();
+        List<String> op = new ArrayList<String>();
+        for(String s: words)
+        {
+            if(hm.containsKey(s))
+            {
+                hm.put(s,hm.get(s)+1);
+            }
+            else
+            {
+                hm.put(s,1);
+            }
+        }
+        hm = sortMapByValue(hm);
+        int count =0;
+        
+        for(Map.Entry<String, Integer> obj: hm.entrySet())
+        {
+            op.add(obj.getKey());
+            count++;
+            if(count ==k)
+            {
+                break;
+            }
+        }
+        return op;
+        
+    }
+    
+    public Map<String,Integer> sortMapByValue(Map hm)
+    {
+        List<Map.Entry<String, Integer>> al = new ArrayList();
+         Map<String, Integer> hm1 = new LinkedHashMap();
+        Collections.sort(al, new Comparator<Map.Entry<String, Integer>>()
+        {
+            @Override
+				public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) 
+                {
+					if(o2.getValue() > o1.getValue())
+                    {
+                        return 1;
+                    }
+                    if(o2.getValue() == o1.getValue())
+                    {
+                        return o1.getKey().compareTo(o2.getKey());  
+                    }
+                    return -1;	
+				} 
+        });
+        for(Map.Entry<String, Integer>obj : al)
+        {
+            hm1.put(obj.getKey(), obj.getValue());
+        }
+        return hm1;
+    }
+    
 }

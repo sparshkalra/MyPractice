@@ -8,7 +8,7 @@ public class SixtInterviewQues {
 		System.out.println(maxInSortedArray(arr));
 		String s = "forgeeksskeegfor";
 		
-		System.out.println(longestPalSubstr(s));
+		//System.out.println(longestPalSubstr(s));
 	}
 	
 	public static int maxInSortedArray(int[] arr)
