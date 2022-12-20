@@ -1,0 +1,29 @@
+Second highest salary
+
+SELECT * FROM employee 
+WHERE salary= (SELECT DISTINCT(salary) 
+FROM employee ORDER BY salary DESC LIMIT n-1,1);
+
+Second higest salary department wise
+
+select ut.user_id, max(ut.txn_amount) as maxs
+from users_txn ut
+where ut.txn_amount < (select max(txn_amount)
+                  from users_txn ut2
+                  where ut2.user_id  = ut.user_id
+                 )
+group by ut.user_id;
+
+
+Users who are also managers
+
+SELECT * FROM EMPLOYEES WHERE (EMPLOYEE_ID IN (SELECT MANAGER_ID FROM EMPLOYEES));
+
+
+Copy a table without contents.
+
+CREATE TABLE splitwise_testing.new_table LIKE splitwise_testing.users;
+
+Having Syntax
+
+select user_id,sum(txn_amount)  from users_txn ut where user_id > 2 group by user_id having sum(txn_amount) < 20000;
