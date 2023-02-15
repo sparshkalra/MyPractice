@@ -16,7 +16,7 @@ public class AutomationTest {
 		
 		
 		int[]arr1 = {5,1,4,2};
-		int[] op = nextGreater2(arr1);
+		int[] op = nextGreater(arr1);
 		System.out.println(Arrays.toString(op));
 	}
 	

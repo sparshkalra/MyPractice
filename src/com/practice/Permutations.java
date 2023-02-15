@@ -2,10 +2,21 @@ package com.practice;
 
 import java.util.*;
 
-public class Permutations {
-
+public class Permutations 
+{
+	public static void main(String[] args)
+	{
+		int[] nums = {1,2,3,4};
+		
+		List<List<Integer>> result = new ArrayList<>();
+		backtracking(result,nums,0);
+		
+		System.out.println(result);
+		
+	}
     public static void backtracking(List<List<Integer>> result, int[]nums, int start){
-        if(start == nums.length){
+
+    	if(start == nums.length){
             result.add(toList(nums));
         }else{
             for(int i=start;i<nums.length;i++){
@@ -30,14 +41,5 @@ public class Permutations {
         nums[j] = temp;
     }
 	
-	public static void main(String[] args)
-	{
-		int[] nums = {1,2,3,4};
-		
-		List<List<Integer>> result = new ArrayList<>();
-		backtracking(result,nums,0);
-		
-		System.out.println(result);
-		
-	}
+
 }

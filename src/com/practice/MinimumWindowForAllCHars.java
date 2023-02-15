@@ -9,7 +9,7 @@ public class MinimumWindowForAllCHars
 		String s = "ADOBECODEBANC";
 		String t = "ABC";
 
-		System.out.print("-->Smallest window that contain all character : ");
+		//System.out.print("-->Smallest window that contain all character : ");
 		System.out.print(Minimum_Window(s.toCharArray(), t.toCharArray()));
 
 	}
@@ -39,15 +39,22 @@ public class MinimumWindowForAllCHars
 		// Traversing the window
 		while (j < s.length) 
 		{
+			
 
 			// Calculations
 			m[s[j]]--;
 			if (m[s[j]] == 0)
+			{
+				System.out.println(s[j]);
 				count--;
+			}
+				
 
 			// Condition matching
 			if (count == 0) 
 			{
+				System.out.println("---");
+				System.out.println(s[j]);
 				while (count == 0) 
 				{
 

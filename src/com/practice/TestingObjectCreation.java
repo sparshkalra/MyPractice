@@ -49,13 +49,13 @@ public class TestingObjectCreation extends ObjectCreation implements Serializabl
 		
 		TestingObjectCreation obj2 = (TestingObjectCreation) ois.readObject();
 		
-		System.out.println("Value of tobc a: " +obj2.a+ " b: "+obj2.b + " c: "+obj2.c);
+		System.out.println("Value of serialized object a: " +obj2.a+ " b: "+obj2.b + " c: "+obj2.c);
 		
 		ois.close();
 		
 		TestingObjectCreation obj3 = (TestingObjectCreation) tobc.clone();
 		
-		System.out.println("Value of tobc a: " +obj3.a+ " b: "+obj3.b + " c: "+obj3.c);
+		System.out.println("Value of cloned object a: " +obj3.a+ " b: "+obj3.b + " c: "+obj3.c);
 		
 	}
 	

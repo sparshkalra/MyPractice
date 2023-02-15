@@ -33,7 +33,10 @@ public class ArrayCombinationMaxNumber
 		{
 			al.add(String.valueOf(arr[i]));
 		}
+			Collections.sort(al);
+			System.out.println(al);
 			
+			System.out.println("---------------------");
 			Collections.sort(al, new Comparator<String>()
 			{
 

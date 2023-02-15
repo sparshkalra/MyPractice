@@ -10,11 +10,13 @@ public class ContainsNearbyDuplicates {
 
 		int[] arr = {1,0,1,1};
 		
-		//System.out.println(containsNearbyDuplicate(arr, 1));
+		System.out.println(containsNearbyDuplicate(arr, 1));
 		
-		int diff = Math.abs(-2147483648 - 2147483647);
-		
-		System.out.println(diff);
+		/*
+		 * int diff = Math.abs(-2147483648 - 2147483647);
+		 * 
+		 * System.out.println(diff);
+		 */
 		
 		System.out.println(containsNearbyAlmostDuplicate(new int[] {1,2,3,1}, 3, 0));
 	}

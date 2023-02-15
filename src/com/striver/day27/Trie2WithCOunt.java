@@ -22,6 +22,7 @@ public class Trie2WithCOunt {
     	
     	System.out.println(trie.searchCount("app"));
     	System.out.println(trie.startsWithCount("app"));
+    	System.out.println(trie.searchCount("app"));
     	
     	trie.remove("app");
     	System.out.println(trie.searchCount("app"));
@@ -34,6 +35,7 @@ public class Trie2WithCOunt {
 	   boolean endOfString;
 	   int countEndOFWord;
 	   int countStartWithWord;
+	   int searchedHowManyTimes;
 	   public TrieNode() 
 	   {
 		   this.children = new HashMap<>();
@@ -88,6 +90,7 @@ public class Trie2WithCOunt {
 	        }
 	        currentNode = currentNode.children.get(c);
 	    }
+	    currentNode.searchedHowManyTimes++;
 	    return currentNode.endOfString;
     }
     
@@ -100,7 +103,7 @@ public class Trie2WithCOunt {
 	        }
 	        currentNode = currentNode.children.get(c);
 	    }
-	    
+	    currentNode.searchedHowManyTimes++;
 	    return currentNode.countEndOFWord;
     }
     
@@ -112,6 +115,7 @@ public class Trie2WithCOunt {
 	        }
 	        currentNode = currentNode.children.get(c);
 	    }
+	    currentNode.searchedHowManyTimes++;
 	    return true;
     }
     
@@ -126,5 +130,18 @@ public class Trie2WithCOunt {
 	    }
 	   
 	    return currentNode.countStartWithWord;
+    }
+    
+    public Integer countSearched(String prefix) {
+        TrieNode currentNode = root;
+        int op =0;
+	    for (char c : prefix.toCharArray()) {
+	        if (!currentNode.children.containsKey(c)) {
+	            return op;
+	        }
+	        currentNode = currentNode.children.get(c);
+	    }
+	   
+	    return currentNode.searchedHowManyTimes;
     }
 }

@@ -10,20 +10,14 @@ public class AircallTest {
 		int[] a = {1,2,2,2,2,4,4,4,4,-1,7,36,8,9,3};
 		int sum = 6;
 		
-		System.out.println(50+20+"abc");
-		System.out.println("abc"+50+20);
-		
-		
-		String s = "absbc123safnsdfn";
-		
-		//returnCount(a,sum);
+
+		returnCount(a,sum);
 	}
 
 	public static int returnCount(int[]a, int sum)
 	{
 		int count =0;
 		
-		System.out.println(50+20+"abc");
 		
 		HashMap<Integer,Integer>hm = new HashMap<>();
 		

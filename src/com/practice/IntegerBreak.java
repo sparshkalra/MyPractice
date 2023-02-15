@@ -5,6 +5,7 @@ public class IntegerBreak {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		https://leetcode.com/problems/integer-break/
 		System.out.println(integerBreak(11));
 		
 	}

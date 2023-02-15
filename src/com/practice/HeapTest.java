@@ -6,7 +6,17 @@ import java.util.Queue;
 
 import com.practice.LinkedListImplementationTest.Node;
 
-public class HeapTest {
+public class HeapTest 
+{
+	public static void main(String[] args)
+	{
+		int arr[] = { 1,1000, 2, 15, 5, 4,
+                45, 88, 96, 50, 45 };
+		
+		firstKelements(arr, arr.length,2);
+   
+		System.out.println(kthLargestImpl(arr, 2));
+	}
 	public static void firstKelements(int arr[], int size, int k) 
 	{
 
@@ -37,15 +47,7 @@ public class HeapTest {
 		System.out.println("Kth largest+ "+ minHeap);
 	}
 	
-	public static void main(String[] args)
-	{
-		int arr[] = { 1,1000, 2, 15, 5, 4,
-                45, 88, 96, 50, 45 };
-		
-		//firstKelements(arr, arr.length,2);
-   
-		System.out.println(kthLargestImpl(arr, 2));
-	}
+	
 	
 	
 	public static int kthLargest(int[]arr, int k)

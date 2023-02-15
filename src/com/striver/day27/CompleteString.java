@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import com.striver.day27.Trie.TrieNode;
+
 public class CompleteString {
 
 	static TrieNode root;
@@ -17,7 +19,10 @@ public class CompleteString {
 		String[] a1 = {"g", "l", "lm", "ga", "lmn", "gaz"};
 		
 		//System.out.println(completeString(a));
-		System.out.println(completeString(a1));
+		//System.out.println(completeString(a1));
+		
+		System.out.println("------------------------------------------");
+		
 		
 	}
 	public static String completeString(String[] a) 
@@ -68,6 +73,7 @@ public class CompleteString {
 		}
 		return op;
 	}
+
 	
 
 }
