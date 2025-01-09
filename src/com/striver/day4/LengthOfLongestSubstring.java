@@ -1,7 +1,8 @@
-package com.striver.day4;
+ package com.striver.day4;
 
 public class LengthOfLongestSubstring {
 
+	//Without repeat
 	public static void main(String[] args) 
 	{	
 		String s = "abcabcbb";

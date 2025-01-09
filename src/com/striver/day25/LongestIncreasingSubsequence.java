@@ -48,6 +48,9 @@ public class LongestIncreasingSubsequence {
     }
     //N square solution
     //{10,9,2,5,3,7,101,18};
+    /*
+     * Count number of elements before it that are less than the number.
+     */
     public int lengthOfLIS2(int[] nums) {
         if(nums == null || nums.length ==0) 
         	return 0;

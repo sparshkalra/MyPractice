@@ -1,11 +1,16 @@
 package com.striver.day1;
 
+import java.util.Arrays;
+
 public class KadaneAlgo {
 	
 	public static void main(String[] args)
 	{
 		int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
 		int[] nums1 = {13,7,2,8,3};
+		
+		System.out.println(findMax(nums));
+		System.out.println(findMax(nums1));
 		
 	}
 	
@@ -22,6 +27,7 @@ public class KadaneAlgo {
 
 			maxsum = Math.max(maxsum, dp[i]);
 		}
+		System.out.println(Arrays.toString(dp));
 
 		return maxsum;
 	}

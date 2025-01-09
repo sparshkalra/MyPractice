@@ -9,7 +9,7 @@ public class AutomationTest {
 		// TODO Auto-generated method stub
 		
 		int[]arr = {1,3,4,2};
-		
+		int[]arr12 = {4, 5, 2, 10, 8};
 		
 		
 		

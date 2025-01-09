@@ -54,6 +54,7 @@ public class LRUCacheImpl
 		newCache.add(40);
 		newCache.add(400);
 		newCache.add(4000);
+		Math.floor(Math.sqrt(4000));
 		newCache.add(4);
 		newCache.add(40000);
 		

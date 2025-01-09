@@ -17,28 +17,6 @@ public class MaximumSumCombination {
 		MaxPairSum(A, B, N, K);
 	}
 
-	public static void MaxPairSum(Integer[] A, Integer[] B, int K) 
-	{
-		int n = A.length;
-		
-		Arrays.sort(A);
-		Arrays.sort(B);
-		
-		PriorityQueue<PairSum> sums = new PriorityQueue<PairSum>();
-		HashSet<Pair> pairs = new HashSet<Pair>();
-		
-		int l = n-1;
-		int m = n-1;
-		
-		sums.add(new PairSum(A[l]+ B[m], l, m));
-		
-		for(int i=0;i<K;i++)
-		{
-			
-		}
-		
-		
-	}
 	public static void MaxPairSum(Integer[] A, Integer[] B, int N, int K) 
 	{
 		// sort both arrays A and B

@@ -1,6 +1,7 @@
 package com.practice;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class AircallTest {
 
@@ -12,6 +13,7 @@ public class AircallTest {
 		
 
 		returnCount(a,sum);
+		puttingValueTest();
 	}
 
 	public static int returnCount(int[]a, int sum)
@@ -61,6 +63,19 @@ public class AircallTest {
 		
 		
 		return count;
+	}
+	
+	public static void puttingValueTest()
+	{
+		int[] arr = {1,2,5,6,7,1,2,5,8,1,1};
+		
+		Map<Integer,Integer> hm = new HashMap();
+		
+		for(int i:arr)
+		{
+			hm.put(i, hm.getOrDefault(i, 0)+1);
+		}
+		System.out.println(hm);
 	}
 	
 	

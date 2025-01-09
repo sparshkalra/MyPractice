@@ -1,41 +1,32 @@
 package com.practice;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Optional;
-import java.util.OptionalDouble;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Java8Methods 
 {
 	public static void main(String[]args)
 	{
-		printStringElements("aabbccddiopabctgrab");
 		
-		ArrayList<String> al = new ArrayList<String>();
-		
-		al.add("abc");
-		al.add("def");
-		al.add("ghi");
-		al.add("adf");
-		
-		
-		String x1 = "Is it possible";
-		
+		//printStringElements("abcddddgab");
+		List<Integer> al = new ArrayList<Integer>();
+		al.add(1);al.add(2);al.add(3);al.add(4);
 		iterateList(al);
 		
-	boolean y = al.stream().anyMatch(x-> x.startsWith("a"));
-	boolean y1 = al.stream().allMatch(x ->x.startsWith("a"));
-	
-	
+		
 	}
 	
+	/*
+	 * Method to count chars of String and sort them on basis of frequency.
+	 * Check if String contains A, then uppercase else print not a found
+	 */
 	public static void printStringElements(String str)
 	{
 		Map<Object, Long> hm = str.chars().mapToObj(c-> 
@@ -43,107 +34,68 @@ public class Java8Methods
 		
 		
 		
+		hm.entrySet().stream().sorted
+		((Map.Entry.<Object,Long>comparingByValue().reversed())).
+		collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1,e2) ->e1,LinkedHashMap::new));
 		
-	    System.out.println(hm);
-	  int op = 1000;
-	    for(Map.Entry<Object,Long> obj : hm.entrySet())
-	    {
-	    	
-	    	 if(obj.getValue() == 1)
-	            {
-	    		 	
-	                op = Math.min(op, str.indexOf((Character)obj.getKey()));
-	            }
-	    }
 	    
-	   /* hm.entrySet()
-        .stream()
-        .sorted((Map.Entry.<String, Integer>comparingByValue().reversed()))
-        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));*/
-	    
-	  hm =  hm.entrySet().stream().sorted
+		hm =  hm.entrySet().stream().sorted
 	    ((Map.Entry.<Object,Long>comparingByValue().reversed())).
 	    collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1,e2) -> e1,LinkedHashMap::new));
 	    
 	    System.out.println(hm);
+	    
+	    String op =  Optional.ofNullable(str)
+                .filter(s -> s.contains("z"))
+                .map(String::toUpperCase)
+                .orElse("A not found");
+	    
+	    System.out.println(op);
+	    
+	    //Null pointer
+	    System.out.println(Optional.of(null).map(t -> ((String) t).toUpperCase()));
 	}
 	
-	public static void iterateList(List<String> al)
+	/*
+	 * Multiply all elements by 3
+	 * Multiply only even elements by 3
+	 * Seperate odd and even elements
+	 * Find max and min
+	 * Seperate odd elements and multiply by 3 and calculate the sum
+	 * 
+	 * 
+	 */
+	
+	public static void iterateList(List<Integer> al)
 	{
+		al.stream().map(x ->x*3).collect(Collectors.toList());
 		
-		Collections.sort(al, new Comparator<String>() 
-		{
-
-			@Override
-			public int compare(String o1, String o2) {
-				// TODO Auto-generated method stub
-				return o1.compareTo(o2);
-			}
-			
-		});	
+		al.stream().filter(x ->x%2 ==0).map(x ->x*3).collect(Collectors.toList());
 		
-		System.out.println("Sorted list");
-		System.out.println("");
-		System.out.println(al);
 		
-		al.forEach(respObj ->{
-			System.out.println(respObj);
-		});
-		System.out.println("--------------------------------------------");
-		al.stream().forEach(
-			
-		System.out::print		
-				);;
+		al.stream().filter(x ->x%2 ==0).collect(Collectors.toList());
 		
-				System.out.println("--------------------------------------------");
-		al.parallelStream().forEach(System.out::print);		
-				
-		ArrayList<String> aList = (ArrayList<String>) al.stream().filter(ele -> ele.startsWith("a")).collect(Collectors.toList());
+		al.stream().min(Comparator.naturalOrder()).get();
 		
-		String x = al.stream().filter(ele -> ele.startsWith("a")).findAny().orElse(null);
+		al.stream().filter(x ->x%2==0).map(x -> x*3).mapToInt(x ->(int)x).sum();
+		
+		Map<Boolean, List<Integer>> x = al.stream().collect(Collectors.partitioningBy(i ->i%2 ==0));
 		System.out.println(x);
-		System.out.println(aList);
 		
+	}
+	
+	public static void iterateStringList(List<String> al)
+	{
+		al.stream().sorted(Comparator.reverseOrder());
 		
-		ArrayList<Integer>al1 = new ArrayList<Integer>();
+		al.stream().distinct().collect(Collectors.toList());
 		
-		al1.add(3);al1.add(12);al1.add(8);al1.add(5);
+	}
+	
+	public static void iterateArray(int[]a, int[]b)
+	{
+		IntStream.concat(Arrays.stream(a), Arrays.stream(b)).sorted().toArray();
 		
-		List<Integer> alMultiThreeOptional = al1.stream().filter(ele ->ele%2==0).map(ele1 -> ele1*3).collect(Collectors.toList());
-		
-		
-		
-		System.out.println(alMultiThreeOptional);
-		
-		List<Integer> alMultiThree = al1.stream().map(ele1 ->ele1*3).collect(Collectors.toList());
-		
-		int value = al1.stream().mapToInt(i -> i.intValue()).sum();
-		
-		System.out.println("Value is " + value);
-		
-		OptionalDouble value1 = al1.stream().mapToInt(i -> i.intValue()).average();
-		
-		System.out.println("Value is " + value1);
-		
-		al1.stream().sorted(Comparator.reverseOrder()).limit(2).skip(1).findFirst();
-
-		
-		Collections.sort(alMultiThree, new Comparator<Integer>() 
-		{
-
-			@Override
-			public int compare(Integer o1, Integer o2) {
-				
-				String a = String.valueOf(o1)+String.valueOf(o2);
-				String b = String.valueOf(o2)+String.valueOf(o1);
-				
-				return b.compareTo(a);
-					
-			}
-			
-		});
-		
-		System.out.println(alMultiThree);
 	}
 
 }

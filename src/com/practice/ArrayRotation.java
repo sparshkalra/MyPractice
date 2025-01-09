@@ -17,7 +17,9 @@ public class ArrayRotation {
 		
 		int[] nums = {3,0,1};
 		
-		System.out.println(missingNumber(nums));
+		//System.out.println(missingNumber(nums));
+		
+		System.out.println(rotateString("abcde", "abced"));
 	}
 	//1,2,3,4,5,6  --- 6,1,2,3,4,5
 	public static void rotateLeft(int[] arr)
@@ -108,6 +110,46 @@ public class ArrayRotation {
         return 0;
             
     }
+    
+    public static boolean rotateString(String s, String goal) 
+    {
+        char[] wordArr = s.toCharArray();
+        char[] wordArr1 = s.toCharArray();
+        for(int i =0;i<wordArr.length;i++)
+        {
+            System.out.println(Arrays.toString(wordArr));
+            int len=wordArr.length;
+		
+		    char temp =wordArr[0];
+		    for(int j=0;j<len-1;j++)
+		    {
+			    wordArr[j] = wordArr[j+1];				
+		    }
+			wordArr[len-1] = temp;
+
+            if(Arrays.equals(wordArr1,wordArr))
+            {
+                return true;
+            }
+        }
+        return false;
+       
+    }
+
+    public char[] rotateRight(char[] arr)
+	{
+		int len=arr.length;
+		
+		char temp =arr[0];
+		for(int i=0;i<len-1;i++)
+		{
+			arr[i] = arr[i+1];				
+		}
+			arr[len-1] = temp;
+            return arr;
+
+		
+	}
 	
 	
 }

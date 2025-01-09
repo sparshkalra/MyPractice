@@ -7,7 +7,7 @@ public class MinElementInSortedRotatedArray {
 		 int arr6[] =  {};
 		 int[] arr = {2,3,4,5,1};
 	        int n6 = arr6.length;
-	       //System.out.println("The minimum element is "+ findMin(arr));
+	       System.out.println("The minimum element is "+ findMin(arr));
 	       //System.out.println("The minimum element is "+ findMin(arr6));
 	        int[] arrFindMin = {4,5,6,7,0,1,2};
 	        int[] arrFindMin2 = {3,1};

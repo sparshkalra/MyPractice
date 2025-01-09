@@ -6,10 +6,10 @@ public class CoinChange {
 
 	public static void main(String[]args)
 	{
-		int[] a = {1,2,5};
+		int[] a = {2,5};
 		int[] b = {186,419,83,408};
 				
-		System.out.println(coinChange(b, 6249));
+		System.out.println(coinChange(a, 23));
 	}
     public static int coinChange(int[] coins, int amount) 
     {

@@ -42,6 +42,7 @@ public class HeapTest
 		Iterator<Integer> iterator = minHeap.iterator();
 
 		while (iterator.hasNext()) {
+			in
 			System.out.print(iterator.next() + " ");
 		}
 		System.out.println("Kth largest+ "+ minHeap);
