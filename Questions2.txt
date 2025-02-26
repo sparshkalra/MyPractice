@@ -1,0 +1,117 @@
+Difference between JDK, JRE and JVM
+
+Answer question
+Question 2
+
+Explain the features of Java 17
+
+Answer question
+Question 3
+
+Are records mutable or immutable? immutable. added in java16
+
+Answer question
+Question 4
+
+Assume there is a folder consisting of multiple log files and you have an application residing on distributed nodes. How would you process those log files from the application without using lock?
+
+read more
+Answer question
+Question 5
+
+If there are multiple beans with the same name, what are other ways to inject it without using qualifier attribute? @Primary, custom bean creation
+
+read more
+Answer question
+Question 6
+
+What are different ways to inject dependencies in Spring Boot? Constructor, field, setter
+
+Answer question
+Question 7
+
+What is the difference between GET and DELETE in REST?
+
+Answer question
+Question 8
+
+What is Graph QL and gRPC?
+
+Answer question
+Question 9
+
+What is the difference between OAuth and OIDC?
+
+Answer question
+Question 10
+
+What is the importance of cluster IP in Kubernetes?
+
+Answer question
+Question 11
+
+How did you deal with vulnerability in the application?
+
+Answer question
+Question 12
+
+One to two questions on Node.js related to the ways of making the application multi threaded?
+
+read more
+Answer question
+Question 13
+
+What is the importance of module in node js world?
+
+Answer question
+Question 14
+
+How do you maintain different versions in API without changing the URL ?
+
+Answer question
+Question 15
+
+What is the difference between atomic and volatile keyword?
+
+	Atomic variables are part of the java.util.concurrent.atomic package, and they are designed to handle atomic operations on variables in a thread-safe way without requiring synchronized blocks or locks.
+
+	The volatile keyword in Java is used to indicate that a variable's value can be modified by multiple threads simultaneously. When a variable is marked as volatile, it tells the JVM and the compiler that the value of the variable can be changed at any time by different threads, and thus the value should not be cached or optimized by the compiler.
+
+Answer question
+Question 16
+
+Explain the internal architecture of Kafka?
+
+Answer question
+Question 17
+
+What are the components in service.yaml in Kubernetes?
+
+Answer question
+Question 18
+
+What are the different ways to make the java based application safe from concurrent access from different threads? Synchronized, locks, Atomic variables
+
+read more
+Answer question
+Question 19
+
+Have you worked/used Spring Expression?
+
+Answer question
+Question 20
+
+How do you access the configurable value in Java Spring boot application?
+
+Answer question
+
+
+MultiThreading, Thread Dump analysis
+
+
+
+spring-boot-starter-validation - Not null annotation
+3. spring-cloud-starter-stream - Kafka
+spring-boot-starter-web - Embedded tomcat, rest api
+Spring Boot Starter Logging
+

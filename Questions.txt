@@ -1,0 +1,45 @@
+1)Kafka make sure that message is consumed only once
+
+	// Manually commit the offset after processing
+        consumer.commitSync(); // commit after processing
+
+2)How to access different partitions of table - Auto handled
+3)Transaction management in microservices - ACID
+5)How partitions work in Kafka
+
+	Consumer Groups: Kafka allows multiple consumers in a group to distribute messages, but if you want to have each consumer consume the message independently, they need to be in separate consumer groups.
+
+	            producer.send(new ProducerRecord<>(topic, partition, userId, message));
+
+
+6)Advantages of spring flux/reactive programming - https://www.geeksforgeeks.org/difference-between-mono-and-flux-in-spring-webflux/
+7)Use of autowiring and @Component
+8) Which spring components you are using.
+
+	The @Component annotation is used to mark a class as a Spring-managed bean. It indicates that Spring should treat this class as a component that can be automatically detected and registered in the Spring application context. When you use @Component on a class, Spring will create an instance of that class and manage its lifecycle.
+
+	The @Autowired annotation is used for dependency injection, allowing Spring to automatically inject the appropriate beans into other components. 
+
+
+
+auto.offset.reset 
+	earliest:
+
+Behavior: The consumer will start reading from the earliest available offset (i.e., the beginning of the topic/partition).
+
+Use case: This option is useful when you want to ensure that the consumer reads all messages from the start (including messages that were sent before the consumer started) when there are no committed offsets or when the consumer is starting for the first time.
+
+
+latest (default):
+
+Behavior: The consumer will start reading from the latest available offset (i.e., the most recent message).
+
+Use case: This option is useful when you want the consumer to process only new messages that arrive after the consumer starts. It skips all older messages.
+
+
+Performance tool - JProfiler
+Event driven architecture
+Why kafka over rabbit mq - Performance is better, message retention is policy based.
+Isolation levels in DB
+How to deserialize object in singleton - implement the method readResolve(). 
+SSO Oauth
