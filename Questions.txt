@@ -43,3 +43,6 @@ Why kafka over rabbit mq - Performance is better, message retention is policy ba
 Isolation levels in DB
 How to deserialize object in singleton - implement the method readResolve(). 
 SSO Oauth
+
+
+

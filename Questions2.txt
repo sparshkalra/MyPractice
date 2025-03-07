@@ -115,3 +115,11 @@ spring-boot-starter-validation - Not null annotation
 spring-boot-starter-web - Embedded tomcat, rest api
 Spring Boot Starter Logging
 
+
+Strategy: This will typically be implemented by having an interface representing the strategy. The client code is then able to write concrete classes implementing this interface as needed for the exact cases
+
+A Decorator pattern can be used to attach additional responsibilities to an object either statically or dynamically.
+
+Adapter pattern allows incompatible interfaces to work together. It acts as a bridge between two incompatible interfaces by converting the method calls from one interface to another.
+
+The Proxy pattern provides a surrogate or placeholder for another object. It controls access to the real object by introducing an intermediary, which can add extra functionality like lazy loading, access control, logging, etc.
