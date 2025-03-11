@@ -123,3 +123,17 @@ A Decorator pattern can be used to attach additional responsibilities to an obje
 Adapter pattern allows incompatible interfaces to work together. It acts as a bridge between two incompatible interfaces by converting the method calls from one interface to another.
 
 The Proxy pattern provides a surrogate or placeholder for another object. It controls access to the real object by introducing an intermediary, which can add extra functionality like lazy loading, access control, logging, etc.
+
+7. CQRS (Command Query Responsibility Segregation)
+Overview: CQRS separates the read and write operations of a microservice. Command-side (writes) and Query-side (reads) are handled by separate models, often leading to different data stores optimized for each.
+Example: In an e-commerce application, the "Order" microservice might have a command model to place orders (write) and a query model to view orders (read).
+Advantages:
+
+Optimizes the read and write sides separately, improving performance.
+Makes it easier to scale read-heavy applications.
+Disadvantages:
+
+Adds complexity in managing two separate models.
+Ensuring consistency between the read and write models can be challenging.
+Requires a more complex implementation and operational overhead.
+
