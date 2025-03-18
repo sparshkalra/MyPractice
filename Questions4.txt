@@ -1,0 +1,56 @@
+Harness is a Continuous Delivery (CD) platform that focuses on simplifying and automating the entire software delivery process, including deployment, monitoring, and verification.
+
+Integrated with EKS
+Automated Continuous Delivery: Automate the entire CD pipeline, including deployment, verification, and rollback.
+Cross-Platform Pipelines: Use Harness to deploy applications not just on Kubernetes but across cloud platforms and other environments.
+
+
+Amazon EC2 (Elastic Compute Cloud) - Running legacy systems, high-compute applications, or applications with custom configurations.
+
+Amazon EKS (Elastic Kubernetes Service) - Best for: Deploying complex microservices architectures with Kubernetes. Ideal for large-scale applications or if you're already using Kubernetes in other environments.
+
+ Amazon ELB (Elastic Load Balancer) - To distribute incoming traffic and provide high availability for your Java microservices.
+
+ Amazon RDS (Relational Database Service)
+
+The Azure equivalent of Amazon EKS (Elastic Kubernetes Service) is Azure Kubernetes Service (AKS).
+
+Advantages of Event-Driven Architecture:
+	Scalability:
+	Loose Coupling:Components in an event-driven system are decoupled.
+	Responsiveness: Since it reacts to events as they occur, it can provide low-latency responses and improve the overall responsiveness of the system.
+	Asynchronous Processing: EDA often uses asynchronous communication, which helps improve performance by preventing blocking operations. 
+
+Disadvantages:
+	Complexity
+	Consistency
+
+
+Kafka broker: A Kafka broker is a server that manages the storage and retrieval of data. It handles requests from both producers and consumers
+A producer is any application or service that sends data to Kafka topics. Producers push data (messages or events) into Kafka, and each message is associated with a topic.
+A consumer is an application or service that reads messages from Kafka topics. Consumers subscribe to one or more topics, and they consume the messages from the partitions in the topic.
+A partition is a subset of a Kafka topic and a basic unit of parallelism and data storage. Each partition is an ordered, immutable sequence of messages that is appended to as new messages arrive. 
+
+
+
+Optimize hibernate performance 
+	
+	1)Lazy loading - you have a Person entity that has a List<Address>, and you don’t need the addresses immediately, you can use lazy loading:
+			@OneToMany(fetch = FetchType.LAZY)
+			private List<Address> addresses;
+
+	2)Use JOIN FETCH to Avoid N+1 Problem - The N+1 problem occurs when Hibernate issues an extra query for each associated object. You can avoid this 	  using JOIN FETCH
+			SELECT p FROM Person p JOIN FETCH p.addresses
+	3) Enable Batch Processing for Inserts, Updates, and Deletes
+	4) Enable Second-Level Cache - Second-level cache stores entities across multiple sessions, reducing the need to query the database repeatedly for the 	   same entities.
+	5) Use Native SQL for Complex Queries
+
+
+Optimize ci/cd
+	1)Caching dependencies
+	2)Incremental Deployments
+	3)Avoiding Unnecessary Steps
+
+Index in DB 1) Improves select but delete, insert performance reduces
+
+
